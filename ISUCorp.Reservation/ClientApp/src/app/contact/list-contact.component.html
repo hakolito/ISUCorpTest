@@ -1,0 +1,59 @@
+<div class="bg-white">
+  <div class="container">
+    <div class="row pagecrumb">
+      <div class="col-lg-4">
+        <h2 class="redcolor">Contact List</h2>
+      </div>
+      <div class="col-lg-4">
+        <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+      </div>
+      <div class="col-lg-4">
+        <button class="btn btn-secondary btn-block" (click)="create()">Create Contact</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th [class.active]="order === 'name'"
+                (click)="setOrder('name')">
+              Name <span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
+            </th>
+            <th [class.active]="order === 'phone'"
+                (click)="setOrder('phone')"
+                class="mdl-data-table__cell--non-numeric">
+              Phone <span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
+            </th>
+            <th [class.active]="order === 'dBO'"
+                (click)="setOrder('phone')">
+              Birth Date <span [hidden]="reverse">▼</span>
+              <span [hidden]="!reverse">▲</span>
+            </th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let e of list | orderBy: order:reverse:'case-insensitive'  | paginate: { itemsPerPage: 10, currentPage: p }">
+            <td>{{ e.name }}</td>
+            <td>{{ e.phone }}</td>
+            <td>{{ e.dBO }}</td>
+            <td>
+              <a [routerLink]='["/"]' class="btn btn-primary">Edit</a>
+              <a (click)="delete(e.id)" class="btn btn-danger">Delete</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </ul>
+      </nav>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,69 @@
+<div class="bg-white">
+  <div class="container">
+    <div class="row pagecrumb">
+      <div class="col-lg-4">
+        <h2 class="redcolor">Reservation List</h2>
+      </div>
+      <div class="col-lg-4">
+        <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+      </div>
+      <div class="col-lg-4">
+        <button class="btn btn-secondary btn-block" (click)="create()">Create Reservation</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-sort-amount-asc"></i></span>
+            </div>
+            <select class="custom-select" id="sorting" (change)="setOrder($event)">
+              <option selected>Sort by</option>
+              <option value="date">By Date Ascending </option>
+              <option value="date">By Date Descending</option>
+              <option value="contact.name">By Alphabetic Ascending</option>
+              <option value="contact.name">By Alphabetic Descending</option>
+              <option value="ranking">By Ranking</option>
+            </select>
+          </div>
+        </div>
+
+      </div>
+      <div class="row tablerow" *ngFor="let e of list | orderBy: order:reverse:'case-insensitive'  | paginate: { itemsPerPage: 10, currentPage: p }">
+        <div class="col-lg-4">
+          <img src="../../assets/images/restaurant.jpg" style="width:50px; height:50px;float:left" />
+          <div style="margin-left:70px">
+            <strong>{{ e.contact.name }}</strong>
+            <p><small>{{ e.date | date:'EEEE, MMMM d, y h:mm:ss a' }}</small></p>
+          </div>
+
+        </div>
+        <div class="col-lg-3">
+          <span>Ranking</span>
+          <star-rating value="{{e.ranking}}" [totalstars]="5" checkedcolor="yellow" uncheckedcolor="gray" size="15px" readonly="true"></star-rating>
+
+
+        </div>
+        <div class="col-lg-3">
+          <span>Add to Favorite</span>
+          <img src="../../assets/images/{{ e.isFavorite === true ? 'checkedfavorite.png' : 'uncheckedfavorite.png'  }}" />
+
+        </div>
+        <div class="col-lg-2">
+          <button class="btn btn-secondary">Edit</button>
+        </div>
+      </div>
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </ul>
+      </nav>
+    </div>
+
+  </div>
+</div>

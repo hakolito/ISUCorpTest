@@ -1,0 +1,71 @@
+<div class="bg-white">
+  <div class="container">
+    <div class="row pagecrumb">
+      <div class="col-lg-4">
+        <h2 class="redcolor">Edit Contact</h2>
+      </div>
+      <div class="col-lg-4">
+        <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="container">
+      <div class="card">
+
+        <div class="card-body">
+          <form #createForm="ngForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+              <div class="col-lg-3">
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fa fa-users"></i></span>
+                  </div>
+                  <input class="form-control" type="text" name="name"
+                         placeholder="Contact Name"
+                         [(ngModel)]="item.name" />
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fa fa-globe"></i></span>
+                  </div>
+                  <select class="custom-select" [(ngModel)]="item.contactTypeId">
+                    <option selected>Contact Type</option>
+                    <option *ngFor="let contactType of contactTypes" [value]="contactType.id"> {{contactType.name}}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                  </div>
+                  <input class="form-control" type="tel" name="phone"
+                         placeholder="Phone"
+                         [(ngModel)]="item.phone" />
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                  </div>
+                  <input class="form-control"  name="dBO"
+                         placeholder="Birth Date"
+                          bsDatepicker
+                        [(ngModel)]="item.dBO" />
+                </div>
+              </div>
+            </div>
+            <a [routerLink]='["/contacts"]' class="btn btn-danger">Cancel</a>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

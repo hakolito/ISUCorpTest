@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Provide sufficient contrast against white background */
+body {
+  background-color: lightgray;
+}
+
+a {
+  color: #0366d6;
+}
+
+code {
+  color: #e01a76;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.pagecrumb {
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.tablerow {
+  background-color: #e9ecef;
+  padding: 5px 5px 0 5px;
+  margin: 0px 20px 10px 20px;
+}
+
+.redcolor {
+    color:red;
+}
+
+.input-group-text {
+  
+  background-color: white;
+  border: 1px solid #ced4da;
+  
+  
+}
+
+
+.ck-editor__editable_inline {
+  min-height: 300px !important;
+}

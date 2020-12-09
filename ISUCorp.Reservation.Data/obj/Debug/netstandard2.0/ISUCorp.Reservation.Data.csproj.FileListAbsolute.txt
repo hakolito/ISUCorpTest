@@ -1,0 +1,9 @@
+C:\Users\MV\Source\Repos\ISUCorp.Reservation.Data\obj\Debug\netstandard2.0\ISUCorp.Reservation.Data.AssemblyInfoInputs.cache
+C:\Users\MV\Source\Repos\ISUCorp.Reservation.Data\obj\Debug\netstandard2.0\ISUCorp.Reservation.Data.AssemblyInfo.cs
+C:\Users\MV\Source\Repos\ISUCorp.Reservation.Data\obj\Debug\netstandard2.0\ISUCorp.Reservation.Data.csproj.CoreCompileInputs.cache
+C:\Users\MV\Source\Repos\ISUCorp.Reservation.Data\bin\Debug\netstandard2.0\ISUCorp.Reservation.Data.deps.json
+C:\Users\MV\Source\Repos\ISUCorp.Reservation.Data\bin\Debug\netstandard2.0\ISUCorp.Reservation.Data.dll
+C:\Users\MV\Source\Repos\ISUCorp.Reservation.Data\bin\Debug\netstandard2.0\ISUCorp.Reservation.Data.pdb
+C:\Users\MV\Source\Repos\ISUCorp.Reservation.Data\obj\Debug\netstandard2.0\ISUCorp.Reservation.Data.dll
+C:\Users\MV\Source\Repos\ISUCorp.Reservation.Data\obj\Debug\netstandard2.0\ISUCorp.Reservation.Data.pdb
+C:\Users\MV\Source\Repos\ISUCorp.Reservation.Data\obj\Debug\netstandard2.0\ISUCorp.Reservation.Data.csprojAssemblyReference.cache
