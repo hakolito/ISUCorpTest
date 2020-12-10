@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -19,6 +19,8 @@ import { RatingModule } from 'ng-starrating';
 import { OrderModule } from 'ngx-order-pipe';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 /*Services*/
 import { ReservationService } from './services/reservation.service';
@@ -48,6 +50,13 @@ import { ContactService } from './services/contact.service';
     OrderModule,
     CKEditorModule,
     BsDatepickerModule.forRoot(),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoader,
+        deps: [HttpClient]
+      }
+    }),
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'create-reservation', component: CreateReservationComponent },
@@ -65,3 +74,8 @@ import { ContactService } from './services/contact.service';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+// AOT compilation support
+export function httpTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}

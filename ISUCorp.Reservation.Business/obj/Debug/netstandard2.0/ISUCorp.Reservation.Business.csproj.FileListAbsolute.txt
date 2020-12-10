@@ -10,3 +10,15 @@ C:\Users\MV\Source\Repos\ISUCorp.Reservation.Business\bin\Debug\netstandard2.0\I
 C:\Users\MV\Source\Repos\ISUCorp.Reservation.Business\obj\Debug\netstandard2.0\ISUCorp.Reservation.Business.csproj.CopyComplete
 C:\Users\MV\Source\Repos\ISUCorp.Reservation.Business\obj\Debug\netstandard2.0\ISUCorp.Reservation.Business.dll
 C:\Users\MV\Source\Repos\ISUCorp.Reservation.Business\obj\Debug\netstandard2.0\ISUCorp.Reservation.Business.pdb
+C:\Users\MV\Source\Repos\hakolito\ISUCorpTest\ISUCorp.Reservation.Business\bin\Debug\netstandard2.0\ISUCorp.Reservation.Business.deps.json
+C:\Users\MV\Source\Repos\hakolito\ISUCorpTest\ISUCorp.Reservation.Business\bin\Debug\netstandard2.0\ISUCorp.Reservation.Business.dll
+C:\Users\MV\Source\Repos\hakolito\ISUCorpTest\ISUCorp.Reservation.Business\bin\Debug\netstandard2.0\ISUCorp.Reservation.Business.pdb
+C:\Users\MV\Source\Repos\hakolito\ISUCorpTest\ISUCorp.Reservation.Business\bin\Debug\netstandard2.0\ISUCorp.Reservation.Data.dll
+C:\Users\MV\Source\Repos\hakolito\ISUCorpTest\ISUCorp.Reservation.Business\bin\Debug\netstandard2.0\ISUCorp.Reservation.Data.pdb
+C:\Users\MV\Source\Repos\hakolito\ISUCorpTest\ISUCorp.Reservation.Business\obj\Debug\netstandard2.0\ISUCorp.Reservation.Business.csprojAssemblyReference.cache
+C:\Users\MV\Source\Repos\hakolito\ISUCorpTest\ISUCorp.Reservation.Business\obj\Debug\netstandard2.0\ISUCorp.Reservation.Business.AssemblyInfoInputs.cache
+C:\Users\MV\Source\Repos\hakolito\ISUCorpTest\ISUCorp.Reservation.Business\obj\Debug\netstandard2.0\ISUCorp.Reservation.Business.AssemblyInfo.cs
+C:\Users\MV\Source\Repos\hakolito\ISUCorpTest\ISUCorp.Reservation.Business\obj\Debug\netstandard2.0\ISUCorp.Reservation.Business.csproj.CoreCompileInputs.cache
+C:\Users\MV\Source\Repos\hakolito\ISUCorpTest\ISUCorp.Reservation.Business\obj\Debug\netstandard2.0\ISUCorp.Reservation.Business.csproj.CopyComplete
+C:\Users\MV\Source\Repos\hakolito\ISUCorpTest\ISUCorp.Reservation.Business\obj\Debug\netstandard2.0\ISUCorp.Reservation.Business.dll
+C:\Users\MV\Source\Repos\hakolito\ISUCorpTest\ISUCorp.Reservation.Business\obj\Debug\netstandard2.0\ISUCorp.Reservation.Business.pdb

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace ISUCorp.Reservation.Business.DTO
@@ -10,6 +11,7 @@ namespace ISUCorp.Reservation.Business.DTO
     {
         public int Id { get; set; }
         public int ContactId { get; set; }
+        [Required]
         public string Description { get; set; }
         public DateTime Date { get; set; }
         public int Ranking { get; set; }

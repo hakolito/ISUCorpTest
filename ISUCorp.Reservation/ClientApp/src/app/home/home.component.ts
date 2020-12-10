@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from "@angular/router";
 import { ReservationService } from '../services/reservation.service'
 import { Reservation } from '../models/reservation.model'
+import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -14,7 +15,10 @@ export class HomeComponent implements OnInit {
   order: string = 'contact.name';
   reverse: boolean = false;
 
-  constructor(private reservationService: ReservationService, private router: Router) { }
+  constructor(private reservationService: ReservationService, private router: Router, private translate: TranslateService) {
+    translate.addLangs(['en', 'es']);
+    translate.setDefaultLang('en');
+  }
 
   ngOnInit() {
     this.loadData();

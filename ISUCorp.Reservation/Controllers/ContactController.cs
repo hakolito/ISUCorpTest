@@ -25,6 +25,12 @@ namespace ISUCorp.Reservation.Controllers
             return _service.GetAll();
         }
 
+        [HttpGet("[action]")]
+        public ContactDTO Search(string name)
+        {
+            return _service.Search(name);
+        }
+
         [HttpPost("[action]")]
         public async Task<IActionResult> Create([FromBody] ContactDTO model)
         {

@@ -8,6 +8,6 @@ namespace ISUCorp.Reservation.Business.Interfaces
 {
     public interface IContactService : IGenericService<Contact,ContactDTO>   
     {
-
+        ContactDTO Search(string name);
     }
 }

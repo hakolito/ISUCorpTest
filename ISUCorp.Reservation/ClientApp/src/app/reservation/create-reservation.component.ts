@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { ReservationService } from '../services/reservation.service'
 import { ContactTypeService } from '../services/contact-type.service'
+import { ContactService } from '../services/contact.service'
 import { Reservation } from '../models/reservation.model'
 import { ContactType } from '../models/contacttype.model'
 import { Contact } from '../models/contact.model'
@@ -19,8 +20,7 @@ export class CreateReservationComponent implements OnInit {
 
 
   constructor(private dataService: ReservationService,
-    private router: Router, private contactTypeService: ContactTypeService)
-  { }
+    private router: Router, private contactTypeService: ContactTypeService, private contactService: ContactService) { }
 
   submitted = false;
   Editor = ClassicEditor;
@@ -40,6 +40,18 @@ export class CreateReservationComponent implements OnInit {
     this.router.navigate(['contacts']);
   }
 
+  onKeyUp(event) {
+    let name = event.target.value;
+
+    if (name.length > 3) {
+      this.contactService.search(name)
+        .subscribe((result: Contact) => {
+          if (result != undefined) {
+            this.contact = result;
+          }
+        });
+    }
+  }
 
   onSubmit() {
     this.submitted = true;

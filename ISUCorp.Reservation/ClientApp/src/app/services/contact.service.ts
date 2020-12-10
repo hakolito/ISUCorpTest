@@ -17,6 +17,10 @@ export class ContactService {
     return this.http.get<Contact>(this.baseUrl + 'api/Contact/GetById?id=' + id)
   }
 
+ search(name: string): Observable<Contact> {
+    return this.http.get<Contact>(this.baseUrl + 'api/Contact/Search?name=' + name)
+  }
+
   create(client: Contact): Observable<number> {
     return this.http.post<number>(this.baseUrl + 'api/Contact/Create', client)
   }
