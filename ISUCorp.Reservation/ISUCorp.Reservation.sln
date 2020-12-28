@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ISUCorp.Reservation", "ISUCorp.Reservation.csproj", "{8D9E4888-6492-4FAC-ACB2-800702602D86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ISUCorp.Reservation", "ISUCorp.Reservation.csproj", "{8D9E4888-6492-4FAC-ACB2-800702602D86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ISUCorp.Reservation.Data", "..\ISUCorp.Reservation.Data\ISUCorp.Reservation.Data.csproj", "{41FB9972-6081-419A-8E6C-5DAA550287AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ISUCorp.Reservation.Data", "..\ISUCorp.Reservation.Data\ISUCorp.Reservation.Data.csproj", "{41FB9972-6081-419A-8E6C-5DAA550287AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ISUCorp.Reservation.Business", "..\ISUCorp.Reservation.Business\ISUCorp.Reservation.Business.csproj", "{43206287-BBE9-4CF4-903F-11FE00A2075C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ISUCorp.Reservation.Business", "..\ISUCorp.Reservation.Business\ISUCorp.Reservation.Business.csproj", "{43206287-BBE9-4CF4-903F-11FE00A2075C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -16,6 +16,9 @@
 <div class="container">
   <div class="card">
     <div class="card-body">
+      <div *ngIf="errorMessage" class="alert alert-warning">
+        <strong>Warning!</strong> {{errorMessage | json}}
+      </div>
       <table class="table">
         <thead>
           <tr>

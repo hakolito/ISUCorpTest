@@ -26,11 +26,14 @@ export class EditContactComponent implements OnInit {
   item: Contact = new Contact();
   contactTypes: ContactType[] = [];
   contactId: number;
+  errorMessage;
   ngOnInit() {
     //getting the contact types
     this.contactTypeService.getAll()
       .subscribe((result: ContactType[]) => {
         this.contactTypes = result;
+      }, (error) => {//Error callback
+        this.errorMessage = error;
       });
 
     this.route.queryParams.subscribe(params => {
@@ -39,6 +42,8 @@ export class EditContactComponent implements OnInit {
       this.dataService.getById(this.contactId)
         .subscribe((result: Contact) => {
           this.item = result;
+        }, (error) => {//Error callback
+          this.errorMessage = error;
         });
     });
 
@@ -51,6 +56,8 @@ export class EditContactComponent implements OnInit {
     this.dataService.update(this.item)
       .subscribe(data => {
         this.router.navigate(['contacts']);
+      }, (error) => {//Error callback
+        this.errorMessage = error;
       });
   }
 }  

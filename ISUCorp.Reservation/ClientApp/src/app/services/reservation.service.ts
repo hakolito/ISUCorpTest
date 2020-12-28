@@ -31,4 +31,8 @@ export class ReservationService {
   delete(id: number) {
     return this.http.post(this.baseUrl + 'api/Reservation/Delete', id)
   }
+
+  getcount(): Observable<number> {
+    return this.http.get<number>(this.baseUrl + 'api/Reservation/GetCount')
+  }
 }

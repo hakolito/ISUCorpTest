@@ -16,6 +16,9 @@
       <div class="card">
 
         <div class="card-body">
+          <div *ngIf="errorMessage" class="alert alert-warning">
+            <strong>Warning!</strong> {{errorMessage | json}}
+          </div>
           <form #createForm="ngForm" (ngSubmit)="onSubmit()">
             <div class="row">
               <div class="col-lg-3">
@@ -54,10 +57,10 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fa fa-calendar"></i></span>
                   </div>
-                  <input class="form-control"  name="dBO"
+                  <input class="form-control" name="dBO"
                          placeholder="Birth Date"
-                          bsDatepicker
-                        [(ngModel)]="item.dBO" />
+                         bsDatepicker
+                         [(ngModel)]="item.dBO" />
                 </div>
               </div>
             </div>

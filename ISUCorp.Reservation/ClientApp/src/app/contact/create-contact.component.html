@@ -16,7 +16,14 @@
       <div class="card">
 
         <div class="card-body">
-          <form #createForm="ngForm" (ngSubmit)="onSubmit()">
+          <div *ngIf="errorMessage" class="alert alert-warning">
+            <ul>
+              <li *ngFor="let error of errorMessage">
+                {{ error }}
+              </li>
+            </ul>
+          </div>
+          <form novalidate [formGroup]="contactForm" (ngSubmit)="onSubmit()">
             <div class="row">
               <div class="col-lg-3">
                 <div class="input-group mb-3">
@@ -25,7 +32,12 @@
                   </div>
                   <input class="form-control" type="text" name="name"
                          placeholder="Contact Name"
-                         [(ngModel)]="item.name" />
+                         formControlName="name" />
+                </div>
+                <div class="alert alert-danger"
+                     role="alert"
+                     *ngIf="!contactForm.controls.name.valid && contactForm.controls.name.touched">
+                  You must enter a name
                 </div>
               </div>
               <div class="col-lg-3">
@@ -33,9 +45,8 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fa fa-globe"></i></span>
                   </div>
-                  <select class="custom-select" [(ngModel)]="item.contactTypeId">
-                    <option selected>Contact Type</option>
-                    <option *ngFor="let contactType of contactTypes" [value]="contactType.id"> {{contactType.name}}</option>
+                  <select class="custom-select" formControlName="contactTypeId">
+                      <option *ngFor="let contactType of contactTypes" [value]="contactType.id"> {{contactType.name}}</option>
                   </select>
                 </div>
               </div>
@@ -46,7 +57,12 @@
                   </div>
                   <input class="form-control" type="tel" name="phone"
                          placeholder="Phone"
-                         [(ngModel)]="item.phone" />
+                        formControlName="phone" />
+                </div>
+                <div class="alert alert-danger"
+                     role="alert"
+                     *ngIf="!contactForm.controls.phone.valid && contactForm.controls.phone.touched">
+                  You must enter a Phone
                 </div>
               </div>
               <div class="col-lg-3">
@@ -54,10 +70,15 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fa fa-calendar"></i></span>
                   </div>
-                  <input class="form-control"  name="dBO"
+                  <input class="form-control" name="dBO"
                          placeholder="Birth Date"
-                          bsDatepicker
-                        [(ngModel)]="item.dBO" />
+                         bsDatepicker
+                         formControlName="dBO" />
+                </div>
+                <div class="alert alert-danger"
+                     role="alert"
+                     *ngIf="!contactForm.controls.dBO.valid && contactForm.controls.dBO.touched">
+                  You must enter a Date
                 </div>
               </div>
             </div>

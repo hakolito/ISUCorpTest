@@ -14,7 +14,8 @@ export class HomeComponent implements OnInit {
   p: number = 1;
   order: string = 'contact.name';
   reverse: boolean = false;
-
+  errorMessage;
+  count: number = 0;
   constructor(private reservationService: ReservationService, private router: Router, private translate: TranslateService) {
     translate.addLangs(['en', 'es']);
     translate.setDefaultLang('en');
@@ -34,6 +35,14 @@ export class HomeComponent implements OnInit {
       else {
         this.hasData = false;
       }
+    }, (error) => {//Error callback
+      this.errorMessage = error;
+    });
+
+    this.reservationService.getcount().subscribe((data) => {
+      this.count = data;
+    }, (error) => {//Error callback
+      this.errorMessage = error;
     });
   }
 

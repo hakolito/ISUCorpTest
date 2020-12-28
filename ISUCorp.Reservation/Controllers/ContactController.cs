@@ -34,6 +34,12 @@ namespace ISUCorp.Reservation.Controllers
         [HttpPost("[action]")]
         public async Task<IActionResult> Create([FromBody] ContactDTO model)
         {
+            // return validation error if required fields aren't filled in
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             var result = await _service.Create(model);
 
             return Json(result);
@@ -48,6 +54,12 @@ namespace ISUCorp.Reservation.Controllers
         [HttpPost("[action]")]
         public async Task<IActionResult> Update([FromBody] ContactDTO model)
         {
+            // return validation error if required fields aren't filled in
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             var result = await _service.Update(model);
 
             return Json(result);

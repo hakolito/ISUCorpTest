@@ -13,6 +13,7 @@ export class ListContactComponent implements OnInit {
   p: number = 1;
   order: string = 'contact.name';
   reverse: boolean = false;
+  errorMessage;
 
   constructor(private dataService: ContactService, private router: Router) { }
 
@@ -30,6 +31,8 @@ export class ListContactComponent implements OnInit {
       else {
         this.hasData = false;
       }
+    }, (error) => {//Error callback
+      this.errorMessage = error;
     });
   }
 
@@ -50,6 +53,8 @@ export class ListContactComponent implements OnInit {
 
     this.dataService.delete(id).subscribe((data) => {
       this.loadData();
+    }, (error) => {//Error callback
+      this.errorMessage = error;
     });
   }
 }

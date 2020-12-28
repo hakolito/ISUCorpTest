@@ -35,9 +35,9 @@ namespace ISUCorp.Reservation.Data.Models
             //Creating the default contacts
             var contacts = new Contact[]
             {
-                new Contact{Name="Carlos Vargas",ContactTypeId = 1, DBO =  DateTime.Now, Phone = "800-123-4567"},
-                new Contact{Name="Cassie Zurbrigg",ContactTypeId = 2, DBO =  DateTime.Now, Phone = "800-123-4567"},
-                new Contact{Name="David Mansilla",ContactTypeId = 3, DBO =  DateTime.Now, Phone = "800-123-4567"}
+                new Contact{Name="Carlos Vargas",ContactTypeId = 1, DBO =  DateTime.Now.AddMonths(1), Phone = "800-123-4567"},
+                new Contact{Name="Cassie Zurbrigg",ContactTypeId = 2, DBO =  DateTime.Now.AddMonths(2), Phone = "900-582-9875"},
+                new Contact{Name="David Mansilla",ContactTypeId = 3, DBO =  DateTime.Now.AddMonths(3), Phone = "100-698-8546"}
             };
 
             foreach (Contact c in contacts)

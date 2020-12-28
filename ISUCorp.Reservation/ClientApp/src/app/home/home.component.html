@@ -16,6 +16,9 @@
 <div class="container">
   <div class="card">
     <div class="card-body">
+      <div *ngIf="errorMessage" class="alert alert-warning">
+        <strong>Warning!</strong> {{errorMessage | json}}
+      </div>
       <div class="row">
         <div class="col-lg-4">
           <div class="input-group mb-3">
@@ -34,6 +37,7 @@
         </div>
 
       </div>
+      <h4>Total Records {{count}}</h4>
       <div class="row tablerow" *ngFor="let e of list | orderBy: order:reverse:'case-insensitive'  | paginate: { itemsPerPage: 10, currentPage: p }">
         <div class="col-lg-4">
           <img src="../../assets/images/restaurant.jpg" style="width:50px; height:50px;float:left" />

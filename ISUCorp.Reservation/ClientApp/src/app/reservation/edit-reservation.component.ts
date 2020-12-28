@@ -29,12 +29,14 @@ export class EditReservationComponent implements OnInit {
   contact: Contact = new Contact();
   contactTypes: ContactType[] = [];
   reservationId: number;
-
+  errorMessage;
   ngOnInit() {
     //getting the contact types
     this.contactTypeService.getAll()
       .subscribe((result: ContactType[]) => {
         this.contactTypes = result;
+      }, (error) => {//Error callback
+        this.errorMessage = error;
       });
 
     this.route.queryParams.subscribe(params => {
@@ -47,9 +49,15 @@ export class EditReservationComponent implements OnInit {
           this.contactService.getById(this.item.contactId)
             .subscribe((result: Contact) => {
               this.contact = result;
+            }, (error) => {//Error callback
+              this.errorMessage = error;
             });
 
+        }, (error) => {//Error callback
+          this.errorMessage = error;
         });
+    }, (error) => {//Error callback
+      this.errorMessage = error;
     });
 
   }
@@ -64,6 +72,8 @@ export class EditReservationComponent implements OnInit {
     this.dataService.update(this.item)
       .subscribe(data => {
         this.router.navigate(['/']);
+      }, (error) => {//Error callback
+        this.errorMessage = error;
       });
   }
 }  

@@ -27,12 +27,14 @@ export class CreateReservationComponent implements OnInit {
   item: Reservation = new Reservation();
   contact: Contact = new Contact();
   contactTypes: ContactType[] = [];
-
+  errorMessage;
   ngOnInit() {
     //getting the contact types
     this.contactTypeService.getAll()
       .subscribe((result: ContactType[]) => {
         this.contactTypes = result;
+      }, (error) => {//Error callback
+        this.errorMessage = error;
       });
   }
 
@@ -49,6 +51,8 @@ export class CreateReservationComponent implements OnInit {
           if (result != undefined) {
             this.contact = result;
           }
+        }, (error) => {//Error callback
+          this.errorMessage = error;
         });
     }
   }
@@ -64,6 +68,8 @@ export class CreateReservationComponent implements OnInit {
     this.dataService.create(this.item)
       .subscribe(data => {
         this.router.navigate(['/']);
+      }, (error) => {//Error callback
+        this.errorMessage = error;
       });
   }
 }  

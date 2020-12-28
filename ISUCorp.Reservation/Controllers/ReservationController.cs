@@ -28,12 +28,20 @@ namespace ISUCorp.Reservation.Controllers
         [HttpGet("[action]")]
         public IEnumerable<ReservationDTO> GetAllList()
         {
+           
+
             return _service.GetAllList();
         }
 
         [HttpPost("[action]")]
         public async Task<IActionResult> Create([FromBody] ReservationDTO model)
         {
+            // return validation error if required fields aren't filled in
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             var result = await _service.Create(model);
 
             return Json(result);
@@ -48,6 +56,12 @@ namespace ISUCorp.Reservation.Controllers
         [HttpPost("[action]")]
         public async Task<IActionResult> Update([FromBody] ReservationDTO model)
         {
+            // return validation error if required fields aren't filled in
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             var result = await _service.Update(model);
 
             return Json(result);
@@ -57,6 +71,14 @@ namespace ISUCorp.Reservation.Controllers
         public IActionResult Delete(int id)
         {
             var result = _service.Delete(id);
+
+            return Json(result);
+        }
+
+        [HttpGet("[action]")]
+        public IActionResult GetCount()
+        {
+            var result = _service.GetReservationCount();
 
             return Json(result);
         }

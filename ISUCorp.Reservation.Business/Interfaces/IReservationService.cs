@@ -8,5 +8,6 @@ namespace ISUCorp.Reservation.Business.Interfaces
     public interface IReservationService : IGenericService<Data.Models.Reservation,ReservationDTO>   
     {
         IEnumerable<ReservationDTO> GetAllList();
+        int GetReservationCount();
     }
 }

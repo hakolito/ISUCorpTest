@@ -26,6 +26,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ReservationService } from './services/reservation.service';
 import { ContactTypeService } from './services/contact-type.service';
 import { ContactService } from './services/contact.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import { ContactService } from './services/contact.service';
     RatingModule,
     OrderModule,
     CKEditorModule,
+    BrowserAnimationsModule,
     BsDatepickerModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
